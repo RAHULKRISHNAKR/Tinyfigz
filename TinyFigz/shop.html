@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyFigz - Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>TinyFigz Shop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="custom-orders.html">Custom Orders</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filters">
+            <h2>Filter by Category</h2>
+            <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="animals">Animals</option>
+                <option value="plants">Plants</option>
+                <option value="characters">Characters</option>
+            </select>
+        </section>
+
+        <section class="product-grid" id="productGrid">
+            <div class="product-card">
+                <img src="images/product1.jpg" alt="Clay Model 1">
+                <h3>Clay Model 1</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Additional product cards can be added here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 TinyFigz. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

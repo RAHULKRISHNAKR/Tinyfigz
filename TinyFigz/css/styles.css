@@ -1,0 +1,101 @@
+/* CSS for TinyFigz E-commerce Website */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive; /* Playful handwritten-style font */
+    color: #ff6f61; /* Pastel pink */
+}
+
+p {
+    font-family: 'Roboto', sans-serif; /* Rounded sans-serif font */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.05);
+}
+
+/* About Us Section */
+.about {
+    padding: 20px;
+    background-color: #ffe4e1; /* Light pastel pink */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Shop Page */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 15%;
+    height: auto;
+}
+
+/* Buttons */
+button {
+    background-color: #ff6f61; /* Pastel pink */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4c3b; /* Darker pink */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .shop-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe4e1; /* Light pastel pink */
+    border-top: 1px solid #ddd;
+}
