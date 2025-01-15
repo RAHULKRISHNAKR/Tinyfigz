@@ -3,47 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TinyFigz - Product Details</title>
+    <title>Product Details - TinyFigz</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>TinyFigz</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="custom-orders.html">Custom Orders</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="custom-orders.html">Custom Orders</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <main>
-        <section class="product-details">
-            <h2>Product Name</h2>
+        <div class="product-container">
             <div class="product-images">
-                <img src="images/product1.jpg" alt="Product Image" class="large-image">
+                <img src="images/product1.jpg" alt="Clay Model">
             </div>
             <div class="product-info">
-                <p class="description">This is a detailed description of the clay model. It highlights the features and craftsmanship.</p>
-                <p class="price">$19.99</p>
-                <label for="customization">Choose Customization:</label>
-                <select id="customization">
-                    <option value="none">None</option>
-                    <option value="color">Color</option>
-                    <option value="size">Size</option>
-                </select>
-                <button class="add-to-cart">Add to Cart</button>
+                <h1>Clay Model</h1>
+                <p class="product-price">$10.00</p>
+                <p class="product-description">
+                    Detailed description of the clay model.
+                </p>
+                
+                <div class="options-group">
+                    <label for="color">Color:</label>
+                    <select id="color">
+                        <option>Pink</option>
+                        <option>Mint</option>
+                        <option>Lavender</option>
+                    </select>
+                </div>
+
+                <div class="quantity-group">
+                    <button class="quantity-btn">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="quantity-btn">+</button>
+                </div>
+
+                <button class="add-to-cart-large">Add to Cart</button>
             </div>
-        </section>
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2023 TinyFigz. All rights reserved.</p>
-    </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html>

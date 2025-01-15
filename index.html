@@ -3,105 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TinyFigz - Home</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>So Stitch - Darling Design</title>
     <style>
+        :root {
+            --pink-light: #ffd6d6;
+            --pink-medium: #ffb6b6;
+            --teal: #80c5c5;
+            --yellow: #ffc458;
+            --coral: #ff8e6e;
+            --spacing-sm: clamp(0.5rem, 1vw, 1rem);
+            --spacing-md: clamp(1rem, 2vw, 2rem);
+            --spacing-lg: clamp(2rem, 4vw, 4rem);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Nunito', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #fff;
+            min-height: 100vh;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
+
+        .header {
+            background-color: white;
+            padding: var(--spacing-md);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
             text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .hero {
-            position: relative;
-            overflow: hidden;
-            height: 400px;
-        }
-        .carousel {
-            display: flex;
-            animation: slide 15s infinite;
-        }
-        .carousel img {
-            width: 100%;
-            height: auto;
-        }
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            33% { transform: translateX(-100%); }
-            66% { transform: translateX(-200%); }
-            100% { transform: translateX(0); }
-        }
-        .content {
-            padding: 2rem;
-            text-align: center;
-        }
-        .content h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
             color: #333;
         }
-        .content p {
-            color: #666;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
+
+        .nav {
+            background-color: var(--pink-light);
+            padding: var(--spacing-sm);
             text-align: center;
-            padding: 1rem 0;
-            position: fixed;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 var(--spacing-sm);
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 0.5rem;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+
+        .new-arrivals {
+            background-color: white;
+            border-radius: 15px;
+            padding: var(--spacing-md);
+            margin: var(--spacing-sm);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .new-arrivals h2 {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--teal), var(--coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            word-wrap: break-word;
+        }
+
+        .new-arrivals .subtitle {
+            color: #b0976a;
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-sm);
+            margin: var(--spacing-md) auto;
+            padding: 0 var(--spacing-sm);
+            max-width: 1200px;
+        }
+
+        .category-card {
+            padding: var(--spacing-md);
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        .category-card:nth-child(1) { background-color: var(--pink-medium); }
+        .category-card:nth-child(2) { background-color: var(--yellow); }
+        .category-card:nth-child(3) { background-color: var(--coral); }
+        .category-card:nth-child(4) { background-color: var(--pink-light); }
+
+        .subscribe {
+            background-color: var(--teal);
+            padding: var(--spacing-lg);
+            text-align: center;
+            color: white;
+        }
+
+        .subscribe h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .subscribe input {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            margin: var(--spacing-sm) 0;
+            width: min(100%, 300px);
+            font-size: 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            text-align: center;
+            padding: var(--spacing-sm);
+        }
+
+        .product-card img {
             width: 100%;
-            bottom: 0;
+            height: auto;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        .product-card h4 {
+            margin: var(--spacing-sm) 0;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+        }
+
+        .shop-now-btn {
+            background-color: var(--pink-medium);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .shop-now-btn:hover {
+            transform: translateY(-2px);
+            background-color: var(--coral);
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: var(--spacing-sm) 0;
+            }
+            
+            .nav a {
+                padding: 0.5rem var(--spacing-sm);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-sm);
+            }
+
+            .subscribe {
+                padding: var(--spacing-md);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .category-grid,
+            .product-grid {
+                padding: var(--spacing-lg);
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>TinyFigz</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="custom-orders.html">Custom Orders</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="logo">So Stitch</div>
     </header>
+    
+    <nav class="nav">
+        <a href="#">HOME</a>
+        <!-- <a href="">NEW IN</a> -->
+        <a href="shop.html">SHOP BY</a>
+        <a href="custom-orders.html">custom-orders</a>
+        <a href="gallery.html">BLOG</a>
+        <a href="product-details.html">FAQ</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
 
-    <section class="hero">
-        <div class="carousel">
-            <img src="images/hero1.jpg" alt="Clay Model 1">
-            <img src="images/hero2.jpg" alt="Clay Model 2">
-            <img src="images/hero3.jpg" alt="Clay Model 3">
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="new-arrivals">
+                <h2>NEW ARRIVALS</h2>
+                <div class="subtitle">just for you</div>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+        </section>
 
-    <section class="content">
-        <h2>Welcome to TinyFigz</h2>
-        <p>Your one-stop shop for custom clay models and figurines. Browse our collection or place a custom order today!</p>
-    </section>
+        <section class="category-grid">
+            <div class="category-card">NEW</div>
+            <div class="category-card">BEST sellers</div>
+            <div class="category-card">Sale</div>
+            <div class="category-card">GIFT ideas</div>
+        </section>
 
-    <footer>
-        <p>&copy; 2023 TinyFigz. All rights reserved.</p>
-    </footer>
+        <section class="subscribe">
+            <h3>SUBSCRIBE</h3>
+            <p>we send cute emails</p>
+            <form>
+                <input type="email" placeholder="Email">
+            </form>
+        </section>
+
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="/api/placeholder/200/200" alt="Vase">
+                <h4>Vase</h4>
+                <p>$15.00 AUD</p>
+            </div>
+            <div class="product-card">
+                <img src="/api/placeholder/200/200" alt="Teacup">
+                <h4>Teacup</h4>
+                <p>$10.00 AUD</p>
+            </div>
+            <div class="product-card">
+                <img src="/api/placeholder/200/200" alt="Camera">
+                <h4>Camera</h4>
+                <p>$60.00 AUD</p>
+            </div>
+            <div class="product-card">
+                <img src="/api/placeholder/200/200" alt="Illustration">
+                <h4>Illustration</h4>
+                <p>$20.00 AUD</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

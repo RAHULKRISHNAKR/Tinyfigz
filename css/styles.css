@@ -1,12 +1,23 @@
 /* CSS for TinyFigz E-commerce Website */
 
 /* General Styles */
+:root {
+    --primary-pink: #FFD1DC;
+    --secondary-lavender: #E6E6FA;
+    --accent-blue: #BDE0FE;
+    --peach: #FFDAB9;
+    --text-dark: #4A4A4A;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background: linear-gradient(135deg, var(--secondary-lavender) 0%, var(--primary-pink) 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -16,6 +27,31 @@ h1, h2, h3 {
 
 p {
     font-family: 'Roboto', sans-serif; /* Rounded sans-serif font */
+}
+
+/* Navigation */
+nav {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow);
+    padding: 1rem 2rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--peach);
 }
 
 /* Hero Section */
@@ -39,26 +75,22 @@ p {
 /* About Us Section */
 .about {
     padding: 20px;
-    background-color: #ffe4e1; /* Light pastel pink */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Shop Page */
 .shop-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 }
 
 .product-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s;
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
 }
 
 .product-card:hover {
@@ -66,36 +98,100 @@ p {
 }
 
 .product-card img {
-    width: 15%;
+    width: 100%;
     height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }
 
 /* Buttons */
 button {
-    background-color: #ff6f61; /* Pastel pink */
-    color: white;
+    background: var(--accent-blue);
     border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    color: var(--text-dark);
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #ff4c3b; /* Darker pink */
+    background: var(--peach);
+    transform: scale(1.05);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--secondary-lavender);
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-blue);
+    outline: none;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.gallery-grid .card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid .card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-grid .small-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .shop-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .product-grid, .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
 
 /* Footer */
 footer {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow);
+    padding: 1rem 2rem;
     text-align: center;
-    padding: 20px;
-    background-color: #ffe4e1; /* Light pastel pink */
-    border-top: 1px solid #ddd;
 }
